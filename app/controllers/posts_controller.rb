@@ -17,7 +17,7 @@ class PostsController < ApplicationController
       redirect_to post_path(@post)
     else
       render :new
-    end
+	end
 	end
 
 	def update
@@ -28,5 +28,9 @@ class PostsController < ApplicationController
 
 	def edit
 	  @post = Post.find(params[:id])
+	end
+
+	def make_title_case
+		self.title = self.title.titlecase
 	end
 end
